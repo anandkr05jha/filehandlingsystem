@@ -1,0 +1,21 @@
+<mat-card>
+    <div class="mat-elevation-z8" style="padding:10px ">
+      <mat-tab-group class="tabs" (animationDone)="onTabChange($event)">
+        <mat-tab label="FILE REPORTS">
+          <div>
+           <app-file-view></app-file-view>
+          </div>
+        </mat-tab>
+        <mat-tab label="TREE STRUCTURE">
+          <div>
+           <app-file-tree></app-file-tree>
+          </div>
+        </mat-tab>
+        <mat-tab label="FILE REPORTS" >
+          <div>
+           <app-file-reports></app-file-reports>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </mat-card>

@@ -1,0 +1,75 @@
+<div class="card">
+  <div class="card-header">
+    <div style="float:left;">
+      <h6 class="title">View Repositories</h6>
+    </div>
+    <div style="text-align: right;">
+      <button class="header-button" (click)="openDialog()" style="cursor: pointer">
+        <span>
+          <i class="fa fa-plus" aria-hidden="true"></i>
+          Add New Repository</span>
+      </button>
+    </div>
+  </div>
+
+
+  <div class="card">
+    <div class="card-header">
+      <div style="float:left;">
+        <h6 class="title">Registered User</h6>
+      </div>
+      <div style="text-align: right;">
+        <button class="header-button" (click)="openUserRegisterDialog()" style="cursor: pointer">
+          <span>
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            Add New User</span>
+        </button>
+      </div>
+    </div>
+    <div class="card-content">
+      <mat-form-field  class="fullLength">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field>
+
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource">
+          <!-- Position Column -->
+          <ng-container matColumnDef="userId">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="userName">
+            <th mat-header-cell *matHeaderCellDef>User Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.userName}} </td>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="emailAddress">
+            <th mat-header-cell *matHeaderCellDef> Email </th>
+            <td mat-cell *matCellDef="let element"> {{element.emailAddress}} </td>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="createdDate">
+            <th mat-header-cell *matHeaderCellDef> Created Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.createdDate}} </td>
+          </ng-container>
+
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="updatedDate">
+            <th mat-header-cell *matHeaderCellDef> Updated Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.updatedDate}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[2, 5, 10, 20]" showFirstLastButtons></mat-paginator>
+      </div>
+    </div>
+  </div>
+</div>

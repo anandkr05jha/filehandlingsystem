@@ -1,0 +1,264 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "assets/sass/md/customCSS";
+
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/*@import 'https://fonts.googleapis.com/css?family=Roboto';*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i');
+
+body {
+  margin: 0px;
+  background-color: #eeeeee;
+  font-family: 'Roboto Condensed', sans-serif !important;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
+    font-family: 'Roboto Condensed', sans-serif !important;
+    line-height: 1.5em;
+}
+.card {
+ //   padding: 9px 15px 7px 15px !important;
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.19), 0 3px 5px rgba(0, 0, 0, 0.23) !important;
+  }
+  .header-button{
+    color: #1ca2ba;
+    background-color: #fff;
+    text-transform: inherit;
+    font-weight: normal;
+    padding: 2px 6px;
+    font-size: 13px;
+    cursor: pointer;
+    vertical-align: middle;
+    border: 1px solid #1ca2ba;
+    box-shadow: none;
+    border-radius: 5px;
+    font-family: 'Roboto Condensed', sans-serif;
+    box-shadow: 0 0 7px #e0dddd;
+    min-width: 70px;
+  }
+  .header-button .category{
+    color: #1ca2ba;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  .card .card-content .category {
+    font-family: 'Roboto Condensed', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 500;
+    letter-spacing: 0.2px !important;
+    color:#404A56;
+  }
+  .mat-form-field {
+    font-size: inherit;
+    font-weight: 400;
+    line-height: 1.0;
+    font-family: 'Roboto Condensed', sans-serif !important;
+}
+  .header-button {
+    font-family: 'Roboto Condensed', sans-serif !important;
+  }
+  .header-button i{
+    font-size: 16px;
+    vertical-align: text-top;
+    margin-right:3px;
+  }
+  .full-width {
+      width:100%;
+  }
+  .mat-elevation-z8 {
+    box-shadow: none;
+    border:1px solid #ddd;
+    border-radius:3px;
+  }
+//   Checkbox  css
+  ::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color:#a5cdf4;
+  }
+  ::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: #2e5b88;
+  }
+
+  // Radio Button css
+::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color:#205081;
+    }
+    
+    ::ng-deep.mat-radio-button.mat-accent .mat-radio-inner-circle {
+    background-color:#205081;
+    } 
+ // Div Firsr child & last child css  
+::ng-deep .card .card-content .col-md-8 {
+    padding-left:6px !important;
+}
+::ng-deep .card .card-content .col-md-4 {
+    padding-right:6px !important;
+}
+.checkbox label, .radio label, label {
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #AAAAAA;
+    padding:0px 5px;
+    font-weight: 400;
+    font-family: 'Roboto Condensed', sans-serif !important;
+}
+.mat-radio-outer-circle {
+    width:17px !important;
+    height:17px !important; 
+    padding: 8px !important;
+}
+.mat-checkbox-inner-container {
+    width:17px !important;
+    height:17px !important; 
+}
+.mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: #205081 !important;
+}
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: #adebad !important;
+}
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: #2db82d !important;
+}
+/**/
+.noscroll {
+        position: fixed;
+        overflow: hidden;
+    }
+
+    #overlay {
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: #ffffff;
+    }
+
+    #spinner {
+        display: none;
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        top: 50%;
+        left: 50%;
+        margin-top: -20px;
+        margin-left: -20px;
+        z-index: 101;
+        // background-color: #3498db;
+        background-color: #205081;
+        -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+        animation: sk-rotateplane 1.2s infinite ease-in-out;
+    }
+
+    @-webkit-keyframes sk-rotateplane {
+        0% { -webkit-transform: perspective(120px) }
+        50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+        100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+    }
+
+    @keyframes sk-rotateplane {
+        0% {
+            transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+            -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+        } 50% {
+            transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+            -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+        } 100% {
+            transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+            -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+        }
+    }
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  .example-tree-progress-bar {
+    margin-left: 30px;
+  }
+  table {
+    width: 100%;
+  }
+  
+  #customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+.mat-row:hover{
+  background-color: #f1f1f1;
+}
+
+.buttonShape {
+  border-radius: 25px;
+  padding: 2px;
+  padding-left: 23px;
+  padding-right: 23px;
+}
+
+::ng-deep .mat-sort-header-container {
+display:flex;
+justify-content:center;
+}
+.action-icon {
+  font-size:18px;
+  vertical-align: text-top;
+  cursor:pointer;
+  padding-left: 5px;
+  padding-right:5px;
+}
+.has-success{
+  color: green;
+}
+
+.has-danger {
+  color: red;
+}
+.full-width {
+  margin-bottom: -15px;
+}
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+}
+.basic-container {
+  padding: 30px;
+}
+.version-info {
+  font-size: 8pt;
+  float: right;
+}

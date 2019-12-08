@@ -1,0 +1,15 @@
+:host {
+    display: block;
+    overflow: hidden;
+  }
+  
+  .panes {
+    width: 200%;
+  
+    display: flex;
+   
+  }
+  
+   .paneDiv {
+      flex: 1;
+    }
