@@ -49,18 +49,14 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { FileHandlingReportComponent, ViewRevisedFileDialog } from './file-handling-report/file-handling-report.component';
 import { AlertModule } from 'ngx-bootstrap';
-import { AddEditFileReportComponent } from './file-handling-report/add-edit-file-report/add-edit-file-report.component';
 
+import { TreeViewModule } from '@syncfusion/ej2-angular-navigations'
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FileHandlingReportComponent,
-    AddEditFileReportComponent,
-    ViewRevisedFileDialog,
   ],
   imports: [
     BrowserModule,
@@ -68,6 +64,7 @@ import { AddEditFileReportComponent } from './file-handling-report/add-edit-file
     AppRoutingModule,
     BrowserAnimationsModule, MatDialogModule,
     MatButtonModule,
+    TreeViewModule,
     // HttpModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -122,7 +119,6 @@ import { AddEditFileReportComponent } from './file-handling-report/add-edit-file
   providers: [ServicesService],
   bootstrap: [AppComponent],
   entryComponents: [
-    ViewRevisedFileDialog,
   ],
 
 })

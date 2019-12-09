@@ -28,11 +28,6 @@ import { ObserveOnSubscriber } from 'rxjs/internal/operators/observeOn';
 })
 export class FileTreeComponent implements OnInit, AfterViewInit {
 
-  nestedTreeControl: NestedTreeControl<FileRootList>;
-  nestedDataSource: MatTreeNestedDataSource<FileRootList>;
-  dataChange: BehaviorSubject<FileRootList[]> = new BehaviorSubject<FileRootList[]>([]);
-
-
   fileRecords: FileRootList[];
   expandedIndex;
   durationInSeconds = 10;
@@ -46,30 +41,18 @@ export class FileTreeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.nestedTreeControl = new NestedTreeControl<FileRootList>(this._getChildren);
-    this.nestedDataSource = new MatTreeNestedDataSource();
   }
 
   Collaps(index: number, data: any) {
     this.expandedIndex = index === this.expandedIndex ? -1 : index;
   }
 
-  
-
-  private _getChildren = (node: FileRootList) => { return node.fileName }; 
-  hasChild = (_: number, nodeData: RevisedFileList) => { return !(nodeData.revisedFileName) }
-
-
-  // private _getChildren = (node: FileRootList) => { return node.fileName }; 
-  // hasChild = (_: number, nodeData: RevisedFileList) => { return !(nodeData.revisedFileName) }
-
   getTreeStructureFile() {
-    TREE_DATA = [];
     this.fileRecords = [];
     this.service.getFileTree().pipe().subscribe(response => {
-      TREE_DATA = response;
+      // TREE_DATA = response;
       this.fileRecords = response;
-      this.dataChange.subscribe(data => this.nestedDataSource.data = TREE_DATA);
+      // this.dataChange.subscribe(data => this.nestedDataSource.data = TREE_DATA);
     }, err => {
       console.log('Error');
     }, () => {
@@ -77,11 +60,6 @@ export class FileTreeComponent implements OnInit, AfterViewInit {
     });
   }
 
-
-
-  viewFileRecord(data: any) {
-
-  }
 
   viewRecordDialogROOT(data: any) {
     const dialogRef = this.dialog.open(ViewRecordFileComponent, {
@@ -147,16 +125,11 @@ export class FileTreeComponent implements OnInit, AfterViewInit {
       this.getTreeStructureFile();
     });
   }
+
+  
 }
 
-let TREE_DATA: FileRootList[] = [];
 
-/** Flat node with expandable and level information */
-interface ExampleFlatNode {
-  expandable: boolean;
-  name: string;
-  level: number;
-}
 
 
 @Component({
